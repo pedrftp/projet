@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row mt-5">
+  <div class="col">
+    <h2>Ultimas noticias:</h2>
+    <ul class="list-group">
+      {% for noticia in noticias %}
+      <li class="list-group-item">
+        <a href="{% url 'detalhar_noticia' noticia.id %}">
+          {{ noticia.titulo }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col">
+    <h2>Autores:</h2>
+    <ul class="list-group">
+      {% for autor in autores %}
+      <li class="list-group-item">
+        <a href="{% url 'detalhar_autor' autor.id %}">{{ autor.nome }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

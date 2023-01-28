@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Noticia:</h2>
+  <h3>Titulo: {{ noticia.titulo }}</h3>
+  <h3>Subtitulo:  {{ noticia.subtitulo }}</h3>
+  <h3>Conteudo:  {{ noticia.conteudo }}</h3>
+  <h3>Data de publicação:  {{ noticia.data_pub }}</h3>
+  <h3>Autor:  {{ noticia.autor }}</h3>
+  <a class="btn btn-primary" href="{% url 'atualizar_noticia' noticia.id %}">Atualizar</a>
+  <a class="btn btn-danger" href="{% url 'deletar_noticia' noticia.id %}">Deletar</a>
+{% endblock content %}

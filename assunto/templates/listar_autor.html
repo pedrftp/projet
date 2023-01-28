@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Autores:</h2>
+<ul class="list-group">
+  {% for autor in autores %}
+    <li class="list-group-item"><a href="{% url 'detalhar_autor' autor.id %}">{{ autor.nome }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock content %}
